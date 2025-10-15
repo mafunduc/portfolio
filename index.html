@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Funduc - Revenue Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: #e4e4e7;
+            background: #0a0a0a;
+            overflow-x: hidden;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid #27272a;
+            z-index: 100;
+            padding: 1.25rem 0;
+        }
+
+        .nav-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fafafa;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #fafafa;
+        }
+        
+        .hero {
+            padding: 10rem 2rem 6rem 2rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            color: #fafafa;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: #71717a;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+        
+        .hero-description {
+            font-size: 1.15rem;
+            color: #a1a1aa;
+            max-width: 680px;
+            line-height: 1.8;
+        }
+
+        .contact-bar {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .contact-bar a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .contact-bar a:hover {
+            color: #fafafa;
+        }
+        
+        .stats {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+        }
+        
+        .stat {
+            background: #18181b;
+            border: 1px solid #27272a;
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .stat:hover {
+            border-color: #3f3f46;
+            transform: translateY(-2px);
+        }
+        
+        .stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #fafafa;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.02em;
+        }
+        
+        .stat-label {
+            color: #71717a;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem 5rem 2rem;
+        }
+
+        .section-header {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fafafa;
+            margin-bottom: 3rem;
+            letter-spacing: -0.02em;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .section-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: #fafafa;
+        }
+        
+        .project {
+            background: #18181b;
+            border: 1px solid #27272a;
+            padding: 3rem;
+            border-radius: 12px;
+            margin-bottom: 2.5rem;
+            transition: all 0.3s;
+        }
+
+        .project:hover {
+            border-color: #3f3f46;
+        }
+        
+        .project-title {
+            font-size: 1.75rem;
+            color: #fafafa;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .project-subtitle {
+            font-size: 1rem;
+            color: #71717a;
+            margin-bottom: 2rem;
+        }
+        
+        .project h3 {
+            color: #fafafa;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .project p {
+            color: #a1a1aa;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+        
+        .project ul {
+            margin-left: 1.5rem;
+            margin-top: 1rem;
+        }
+        
+        .project li {
+            margin-bottom: 0.75rem;
+            color: #a1a1aa;
+            line-height: 1.7;
+        }
+
+        .project li strong {
+            color: #e4e4e7;
+        }
+        
+        .impact-box {
+            background: rgba(74, 222, 128, 0.05);
+            border-left: 3px solid #4ade80;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 4px;
+        }
+
+        .impact-box strong {
+            color: #4ade80;
+        }
+
+        .impact-box p {
+            color: #d4d4d8;
+        }
+        
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 2rem;
+        }
+        
+        .tech-tag {
+            background: #27272a;
+            color: #fafafa;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid #3f3f46;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .tech-tag:hover {
+            background: #3f3f46;
+            border-color: #52525b;
+        }
+
+        .skills-section {
+            background: #18181b;
+            border: 1px solid #27272a;
+            padding: 3rem;
+            border-radius: 12px;
+        }
+
+        .skills-section p {
+            color: #a1a1aa;
+            line-height: 2;
+            margin-bottom: 1.25rem;
+        }
+
+        .skills-section p strong {
+            color: #fafafa;
+            font-weight: 600;
+        }
+
+        footer {
+            border-top: 1px solid #27272a;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #71717a;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.25rem;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+
+            .project {
+                padding: 2rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-content">
+            <div class="nav-name">Michael Funduc</div>
+            <div class="nav-links">
+                <a href="#work">Work</a>
+                <a href="#skills">Skills</a>
+                <a href="mailto:mfunduc@gmail.com">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <h1>Revenue Operations</h1>
+        <div class="subtitle">Systems builder & problem solver</div>
+        <p class="hero-description">
+            I architect revenue systems and solve business problems through technology. Whether it's designing Salesforce solutions, building automation tools, or implementing new processes—I figure out what needs to exist and make it happen.
+        </p>
+        <div class="contact-bar">
+            <a href="mailto:mfunduc@gmail.com">mfunduc@gmail.com</a>
+            <a href="tel:3135496273">(313) 549-6273</a>
+            <a href="https://linkedin.com/in/mfunduc">LinkedIn →</a>
+        </div>
+    </div>
+
+    <div class="stats">
+        <div class="stat">
+            <div class="stat-value">92%</div>
+            <div class="stat-label">Data quality improvement achieved</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">91%</div>
+            <div class="stat-label">Time saved on quote generation</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">8 hrs/week</div>
+            <div class="stat-label">Manual reporting eliminated</div>
+        </div>
+        <div class="stat">
+            <div class="stat-value">±3%</div>
+            <div class="stat-label">Forecast accuracy stabilized</div>
+        </div>
+    </div>
+
+    <div class="section" id="work">
+        <h2 class="section-header">Selected Work</h2>
+
+        <div class="project">
+            <div class="project-title">Salesforce Executive Dashboards</div>
+            <div class="project-subtitle">Real-time sales intelligence platform</div>
+            
+            <p>Leadership had no visibility into sales performance—weekly reports were outdated before delivery. Designed and built comprehensive dashboard systems that transformed decision-making with real-time data.</p>
+
+            <h3>What I Built</h3>
+            <ul>
+                <li><strong>Executive Dashboard:</strong> Real-time performance tracking, sales by rep, monthly trends, industry breakdown, pipeline visibility</li>
+                <li><strong>Forecast Companion:</strong> Multi-scenario pipeline analysis with confidence levels (Pipeline, Upside, Commit) for current and future quarters</li>
+                <li><strong>War Room Report:</strong> High-value deals requiring executive attention</li>
+                <li><strong>Custom Report Types:</strong> Built from scratch to support needed field combinations and calculations</li>
+            </ul>
+
+            <div class="impact-box">
+                <p><strong>Business Impact:</strong> Eliminated 8 hours/week of manual reporting. Reduced executive prep from 2 hours to 5 minutes per meeting. Dashboards used daily by CEO and referenced in board meetings.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Salesforce</span>
+                <span class="tech-tag">Custom Reports</span>
+                <span class="tech-tag">Dashboard Design</span>
+                <span class="tech-tag">Data Visualization</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Salesforce Data Quality Initiative</div>
+            <div class="project-subtitle">Enterprise data transformation</div>
+            
+            <p>Salesforce instance had inconsistent data, duplicates, and incomplete fields making forecasting unreliable. Led comprehensive cleanup initiative to establish data quality standards.</p>
+
+            <h3>What I Did</h3>
+            <ul>
+                <li>Rationalized field structure and normalized picklists across all objects</li>
+                <li>Implemented validation rules to prevent bad data at entry</li>
+                <li>Audited and corrected account hierarchies and relationships</li>
+                <li>Built duplicate management rules and matching criteria</li>
+                <li>Created data quality dashboards for ongoing monitoring</li>
+            </ul>
+
+            <div class="impact-box">
+                <p><strong>Business Impact:</strong> Improved data completeness from 68% to 92%. Reduced duplicate records by 45%. Created foundation for trustworthy forecasting and pipeline management.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Data Governance</span>
+                <span class="tech-tag">Salesforce Admin</span>
+                <span class="tech-tag">Validation Rules</span>
+                <span class="tech-tag">Duplicate Management</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Quote Automation Tool</div>
+            <div class="project-subtitle">Custom CPQ solution</div>
+            
+            <p>Sales reps spent 60+ minutes building quotes manually with frequent pricing errors. Designed and implemented web-based quoting tool with automated calculations and PDF generation.</p>
+
+            <h3>Features Delivered</h3>
+            <ul>
+                <li>Automated pricing with volume discounts and multi-year scenarios</li>
+                <li>Real-time validation preventing pricing errors</li>
+                <li>Professional PDF generation with company branding</li>
+                <li>Clean interface requiring zero training</li>
+            </ul>
+
+            <div class="impact-box">
+                <p><strong>Business Impact:</strong> Reduced quote generation by 91% (60 min → 5 min). Eliminated pricing errors. Adopted as standard by entire sales team.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Process Automation</span>
+                <span class="tech-tag">CPQ Logic</span>
+                <span class="tech-tag">PDF Generation</span>
+                <span class="tech-tag">HTML/CSS/JS</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Sales Stage Framework</div>
+            <div class="project-subtitle">Process architecture for revenue operations</div>
+            
+            <p>Three opportunity types (Net-New, Expansion, Renewal) all forced through same generic stages, creating forecast confusion. Designed differentiated frameworks aligned to business reality.</p>
+
+            <h3>Solution Design</h3>
+            <ul>
+                <li><strong>Net-New Track:</strong> 11-stage process with clear qualification gates and progression criteria</li>
+                <li><strong>Expansion Track:</strong> 5-stage streamlined process leveraging existing relationships</li>
+                <li><strong>Renewal Track:</strong> 6-stage process with automated 120-day triggers</li>
+                <li>Mapped all stages to forecast categories with probability bands</li>
+                <li>Created "stale deal" monitoring for pipeline hygiene</li>
+            </ul>
+
+            <div class="impact-box">
+                <p><strong>Business Impact:</strong> Currently implementing. Projected improvements to forecast accuracy and pipeline velocity through clear progression criteria and automated monitoring.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">Process Design</span>
+                <span class="tech-tag">Sales Methodology</span>
+                <span class="tech-tag">Change Management</span>
+                <span class="tech-tag">Salesforce Automation</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <div class="project-title">Technical Learning Projects</div>
+            <div class="project-subtitle">System architecture & modern development tools</div>
+            
+            <p>To better understand technical implementation, I've architected and built several projects using modern development tools and AI-assisted development workflows.</p>
+
+            <h3>Projects</h3>
+            <ul>
+                <li><strong>Business Management System:</strong> Designed full CRM architecture (React + Node.js + SQLite) with authentication, quote-to-invoice workflow, and PDF generation. Learned modern stack patterns and API design.</li>
+                <li><strong>SaaS Subscription Platform:</strong> Architected multi-tenant validation tool with Stripe billing, Supabase authentication, and automated CI/CD. Learned subscription business mechanics and payment integration.</li>
+                <li><strong>Multi-Language Database Tool:</strong> Built same utility in 6 languages (Python, Java, JS, C#, Rust, Go) to understand performance tradeoffs and language paradigms.</li>
+            </ul>
+
+            <div class="impact-box">
+                <p><strong>Value:</strong> These projects taught me system architecture, modern development patterns, and how to work effectively with development teams. I can spec requirements, understand technical constraints, and bridge business-technology gaps.</p>
+            </div>
+
+            <div class="tech-stack">
+                <span class="tech-tag">System Architecture</span>
+                <span class="tech-tag">API Design</span>
+                <span class="tech-tag">AI-Assisted Development</span>
+                <span class="tech-tag">Technical Literacy</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="section" id="skills">
+        <h2 class="section-header">Skills & Capabilities</h2>
+        
+        <div class="skills-section">
+            <p><strong>Salesforce Administration</strong><br>
+            Custom Objects & Fields, Validation Rules, Workflows & Process Builder, Reports & Dashboards, Data Quality Management, Duplicate Rules, Security Model, User Management</p>
+
+            <p><strong>Revenue Operations</strong><br>
+            Forecast Management, Pipeline Analytics, GTM Process Design, Data Governance, Sales Methodology, CRM Strategy, Business Automation, Cross-functional Collaboration</p>
+
+            <p><strong>Technical Capabilities</strong><br>
+            System architecture design, API integration concepts, Database fundamentals, Modern development workflows, AI-assisted development tools, Technical documentation, Requirements gathering</p>
+
+            <p><strong>Process & Analysis</strong><br>
+            Process improvement, Dashboard design, Data analysis, Excel/Google Sheets (Power Query, formulas), Documentation, Training & enablement, Project management</p>
+
+            <p><strong>Tools & Platforms</strong><br>
+            Salesforce, HubSpot, Stripe, Supabase, HTML/CSS/JavaScript basics, SQL fundamentals, Git version control, various BI tools</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 Michael Funduc. Available for Revenue Operations and Salesforce Administrator roles.</p>
+    </footer>
+</body>
+</html>
