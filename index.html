@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Funduc - Revenue Operations Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .contact {
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .contact a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .intro {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .intro h2 {
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-left: 4px solid #667eea;
+        }
+        
+        .metric-card h3 {
+            font-size: 2rem;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .metric-card p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .project {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .project h2 {
+            color: #333;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .project h2::before {
+            content: "→";
+            color: #667eea;
+            font-weight: bold;
+        }
+        
+        .project h3 {
+            color: #667eea;
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .project ul {
+            margin-left: 1.5rem;
+            margin-top: 0.5rem;
+        }
+        
+        .project li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background: #667eea;
+            color: white;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+        
+        .impact {
+            background: #f0f9ff;
+            border-left: 4px solid #0ea5e9;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .impact strong {
+            color: #0ea5e9;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 1.8rem;
+            }
+            .metrics {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Michael Funduc</h1>
+        <p>Revenue Operations & Salesforce Specialist</p>
+        <div class="contact">
+            <a href="mailto:mfunduc@gmail.com">mfunduc@gmail.com</a>
+            <a href="tel:3135496273">(313) 549-6273</a>
+            <a href="https://linkedin.com/in/mfunduc" target="_blank">LinkedIn</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="intro">
+            <h2>Building Revenue Operations That Scale</h2>
+            <p>I transform chaotic GTM processes into scalable, data-driven operations. My work eliminates manual reporting, improves forecast accuracy, and gives leadership real-time visibility into what's actually happening in the business.</p>
+        </div>
+
+        <div class="metrics">
+            <div class="metric-card">
+                <h3>92%</h3>
+                <p>Data completeness achieved (from 68%)</p>
+            </div>
+            <div class="metric-card">
+                <h3>91%</h3>
+                <p>Time saved on quote generation (60 min → 5 min)</p>
+            </div>
+            <div class="metric-card">
+                <h3>8 hrs/week</h3>
+                <p>Manual reporting eliminated</p>
+            </div>
+            <div class="metric-card">
+                <h3>±3%</h3>
+                <p>Forecast variance stabilized</p>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Executive Intelligence Platform</h2>
+            <p><strong>The Problem:</strong> Leadership was flying blind with no real-time visibility into sales performance, pipeline health, or forecast accuracy. Weekly reports were outdated by the time they reached executives.</p>
+            
+            <h3>Solution</h3>
+            <p>Built two comprehensive Salesforce dashboard systems that transformed decision-making:</p>
+            <ul>
+                <li><strong>Executive Dashboard:</strong> Real-time Q4 performance tracking ($62K vs $50K goal), sales by rep, monthly trends, industry breakdown, and pipeline visibility</li>
+                <li><strong>Forecast Companion:</strong> Multi-scenario pipeline intelligence with confidence levels (Pipeline, Upside, Commit) for current and future quarters</li>
+                <li><strong>War Room Report:</strong> Executive attention on deals >$2K requiring intervention</li>
+            </ul>
+
+            <div class="impact">
+                <strong>Business Impact:</strong> Eliminated 8 hours/week of manual reporting, reduced executive prep from 2 hours to 5 minutes per meeting, dashboards used daily by CEO and referenced in board meetings
+            </div>
+
+            <div class="skills">
+                <span class="skill-tag">Salesforce Administration</span>
+                <span class="skill-tag">Dashboard Design</span>
+                <span class="skill-tag">Custom Reports</span>
+                <span class="skill-tag">Data Visualization</span>
+                <span class="skill-tag">Stakeholder Management</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Quote-to-Cash Automation</h2>
+            <p><strong>The Problem:</strong> Sales reps spent 60+ minutes manually building quotes, making frequent pricing errors, and struggling with complex multi-year scenarios.</p>
+            
+            <h3>Solution</h3>
+            <p>Led development of custom web-based quoting tool with:</p>
+            <ul>
+                <li>Automated pricing calculations with volume discounts and multi-year scenarios</li>
+                <li>Real-time validation to prevent pricing errors</li>
+                <li>Professional PDF generation with company branding</li>
+                <li>Integration-ready architecture for future Salesforce sync</li>
+            </ul>
+
+            <div class="impact">
+                <strong>Business Impact:</strong> Reduced quote generation time by 91% (60 min → 5 min), eliminated pricing errors, adopted as standard by entire sales team
+            </div>
+
+            <div class="skills">
+                <span class="skill-tag">HTML/CSS/JavaScript</span>
+                <span class="skill-tag">Process Automation</span>
+                <span class="skill-tag">CPQ Logic</span>
+                <span class="skill-tag">User Experience Design</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Salesforce Data Transformation</h2>
+            <p><strong>The Problem:</strong> Salesforce was filled with inconsistent data, duplicate records, and incomplete fields making reporting and forecasting unreliable.</p>
+            
+            <h3>Solution</h3>
+            <p>Led comprehensive data quality initiative:</p>
+            <ul>
+                <li>Rationalized field structure and normalized picklists across objects</li>
+                <li>Implemented validation rules and duplicate management</li>
+                <li>Audited and corrected account hierarchies</li>
+                <li>Built data quality dashboards for ongoing monitoring</li>
+            </ul>
+
+            <div class="impact">
+                <strong>Business Impact:</strong> Improved data completeness from 68% to 92%, reduced duplicate records by 45%, created foundation for trustworthy forecasting
+            </div>
+
+            <div class="skills">
+                <span class="skill-tag">Data Governance</span>
+                <span class="skill-tag">Salesforce Validation Rules</span>
+                <span class="skill-tag">Duplicate Management</span>
+                <span class="skill-tag">Data Quality</span>
+            </div>
+        </div>
+
+        <div class="project">
+            <h2>Sales Stage Framework Implementation</h2>
+            <p><strong>The Problem:</strong> Three different opportunity types (Net-New, Expansion, Renewal) all forced through the same generic stages, creating forecasting confusion and process inefficiency.</p>
+            
+            <h3>Solution</h3>
+            <p>Designed differentiated stage frameworks:</p>
+            <ul>
+                <li><strong>Net-New:</strong> 11-stage process from SAL through closed won with clear exit criteria</li>
+                <li><strong>Expansion:</strong> 5-stage streamlined process for existing customers</li>
+                <li><strong>Renewal:</strong> 6-stage process with 120-day automated triggers</li>
+                <li>Mapped all stages to forecast categories (Pipeline, Upside, Most Likely, Commit)</li>
+                <li>Built "stale opportunities" monitoring for deals stuck >30 days</li>
+            </ul>
+
+            <div class="impact">
+                <strong>Business Impact:</strong> Currently implementing - projected to improve forecast accuracy and pipeline velocity by creating clear progression criteria
+            </div>
+
+            <div class="skills">
+                <span class="skill-tag">Process Design</span>
+                <span class="skill-tag">Sales Methodology</span>
+                <span class="skill-tag">Change Management</span>
+                <span class="skill-tag">Cross-functional Collaboration</span>
+            </div>
+        </div>
+
+        <div class="intro">
+            <h2>Technical Skills</h2>
+            <p><strong>Salesforce:</strong> Administration, Custom Objects & Fields, Validation Rules, Flows, Reports & Dashboards, Duplicate Management, Data Quality</p>
+            <p><strong>Revenue Operations:</strong> Forecast Management, Pipeline Analytics, GTM Process Design, Data Governance, Sales Methodology</p>
+            <p><strong>Technical:</strong> HTML/CSS/JavaScript, Excel/Google Sheets (Power Query, Advanced Formulas), SQL basics, API integration concepts</p>
+            <p><strong>Tools:</strong> Salesforce, HubSpot, DocuSign, various BI platforms</p>
+        </div>
+    </div>
+</body>
+</html>
